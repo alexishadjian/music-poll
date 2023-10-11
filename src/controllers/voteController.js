@@ -11,10 +11,9 @@ exports.listAllVotes = async (req, res) => {
     } catch (error) {
         res.status(500);
         console.log(error);
-        res.json({message: 'Erreur serveur'})
+        res.json({message: "Erreur serveur"})
     }
 }
-
 
 
 exports.createAVote = async (req, res) => {
@@ -41,6 +40,7 @@ exports.createAVote = async (req, res) => {
 
 }
 
+
 exports.updateAVote = async (req, res) => {
 
     try {
@@ -54,6 +54,7 @@ exports.updateAVote = async (req, res) => {
     }
 
 }
+
 
 exports.deleteAVote = async (req, res) => {
     
@@ -75,6 +76,7 @@ exports.deleteAVote = async (req, res) => {
     }
 
 }
+
 
 exports.getAVote = async (req, res) => {
     

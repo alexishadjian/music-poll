@@ -1,5 +1,6 @@
 const Music = require('../models/musicModel');
 
+
 exports.listAllMusics = async (req, res) => {
     
     try {
@@ -9,9 +10,10 @@ exports.listAllMusics = async (req, res) => {
     } catch (error) {
         res.status(500);
         console.log(error);
-        res.json({message: 'Server error'})
+        res.json({message: "Server error"})
     }
 }
+
 
 exports.createAMusic = async (req, res) => {
 
@@ -24,9 +26,10 @@ exports.createAMusic = async (req, res) => {
     } catch (error) {
         res.status(500);
         console.log(error);
-        res.json({message: 'Server error'})
+        res.json({message: "Server error"})
     }
 }
+
 
 exports.updateAMusic = async (req, res) => {
 
@@ -37,25 +40,27 @@ exports.updateAMusic = async (req, res) => {
     } catch (error) {
         res.status(500);
         console.log(error);
-        res.json({message: 'Server error'});
+        res.json({message: "Server error"});
     }
 
 }
+
 
 exports.deleteAMusic = async (req, res) => {
     
     try {
         await Music.findByIdAndDelete(req.params.id_music);
         res.status(200);
-        res.json({message: 'Music deleted'});
+        res.json({message: "Music deleted"});
 
     } catch {
         res.status(500);
         console.log(error);
-        res.json({message: 'Server error'});
+        res.json({message: "Server error"});
     }
 
 }
+
 
 exports.getAMusic = async (req, res) => {
     
@@ -67,10 +72,11 @@ exports.getAMusic = async (req, res) => {
     } catch {
         res.status(500);
         console.log(error);
-        res.json({message: 'Server error'});
+        res.json({message: "Server error"});
     }
 
 }
+
 
 exports.getResults = async (req, res) => {
     
