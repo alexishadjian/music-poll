@@ -1,6 +1,6 @@
 const Music = require('../models/musicModel');
 
-exports.listAllMusics = async (req, res) => {
+exports.listAllMusic = async (req, res) => {
     
     try {
         const musics = await Music.find({});
