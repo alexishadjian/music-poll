@@ -18,7 +18,7 @@ router
 
 
 router
-    .route('/music/results')
-        .put(musicController.getResults);
+    .route('/results')
+        .get(musicController.getResults);
 
 module.exports = router;
