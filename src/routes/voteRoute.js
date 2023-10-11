@@ -8,7 +8,7 @@ const voteController = require('../controllers/voteController');
 router
     .route('/votes/:id_music')
     // .get(voteController.voteForMusic)
-    .post(voteController.voteForMusic)
+    .post(voteController.createAVote)
 
 // /music/:id_comment
 router
