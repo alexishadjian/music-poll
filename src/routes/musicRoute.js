@@ -4,17 +4,21 @@ const router = express.Router();
 const musicController = require('../controllers/musicController');
 
 
-// /music
 router
     .route('/')
-    .get(musicController.listAllMusics)
-    .post(musicController.createAMusic)
+        .get(musicController.listAllMusics)
+        .post(musicController.createAMusic)
 
-// /music/:id_comment
+
 router
-    .route('/musics/:id_music')
-    .put(musicController.updateAMusic)
-    .get(musicController.getAMusic)
-    .delete(musicController.deleteAMusic);
+    .route('/:id_music')
+        .put(musicController.updateAMusic)
+        .get(musicController.getAMusic)
+        .delete(musicController.deleteAMusic);
+
+
+router
+    .route('/results')
+        .get(musicController.getResults);
 
 module.exports = router;

@@ -4,17 +4,16 @@ const router = express.Router();
 const voteController = require('../controllers/voteController');
 
 
-// /music
 router
-    .route('/votes/:id_music')
-    // .get(voteController.voteForMusic)
-    .post(voteController.createAVote)
+    .route('/musics/:id_music/votes')
+        .get(voteController.listAllVotes)
+        .post(voteController.createAVote)
 
-// /music/:id_comment
+
 router
-    .route('/votes/result')
-    .put(voteController.getResults)
-    // .get(musicController.getAMusic)
-    // .delete(musicController.deleteAMusic);
+    .route('/votes/:id_vote')
+        .get(voteController.getAVote)
+        .put(voteController.updateAVote)
+        .delete(voteController.deleteAVote)
 
 module.exports = router;
