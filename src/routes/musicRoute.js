@@ -12,7 +12,7 @@ router
 
 // /music/:id_comment
 router
-    .route('/musics/:id_music')
+    .route('/:id_music')
     .put(musicController.updateAMusic)
     .get(musicController.getAMusic)
     .delete(musicController.deleteAMusic);

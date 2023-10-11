@@ -31,7 +31,7 @@ exports.createAMusic = async (req, res) => {
 exports.updateAMusic = async (req, res) => {
 
     try {
-        const music = await Post.findByIdAndUpdate(req.params.id_music, req.body, {new: true});
+        const music = await Music.findByIdAndUpdate(req.params.id_music, req.body, {new: true});
         res.status(200);
         res.json(music);
     } catch (error) {
@@ -45,7 +45,7 @@ exports.updateAMusic = async (req, res) => {
 exports.deleteAMusic = async (req, res) => {
     
     try {
-        await Post.findByIdAndDelete(req.params.id_music);
+        await Music.findByIdAndDelete(req.params.id_music);
         res.status(200);
         res.json({message: 'Musique supprimée'});
 
