@@ -13,7 +13,7 @@ const musicRoute = require('./routes/musicRoute');
 const voteRoute = require('./routes/voteRoute');
 // postRoute(app);
 
-app.use('/music', musicRoute);
+app.use('/musics', musicRoute);
 app.use('/', voteRoute);
 
 app.listen(port, () => {

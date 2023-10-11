@@ -7,12 +7,12 @@ const musicController = require('../controllers/musicController');
 // /music
 router
     .route('/')
-    .get(musicController.listAllMusic)
+    .get(musicController.listAllMusics)
     .post(musicController.createAMusic)
 
 // /music/:id_comment
 router
-    .route('/music/:id_music')
+    .route('/musics/:id_music')
     .put(musicController.updateAMusic)
     .get(musicController.getAMusic)
     .delete(musicController.deleteAMusic);
