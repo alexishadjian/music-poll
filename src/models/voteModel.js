@@ -4,7 +4,9 @@ const Schema = mongoose.Schema;
 let voteSchema = new Schema ({
     number: {
         type: Number,
-        required: true
+        min: [1, 'Number mustn\'t be less than 1'],
+        max: [5, 'Number mustn\'t be greater than 5 '],
+        required: "Rating is required"
     },
     created_at: {
         type: Date,
