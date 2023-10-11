@@ -22,14 +22,26 @@ exports.createAVote = async (req, res) => {
         await Music.findById(req.params.id_music);
         const newVote = new Vote({...req.body, music_id: req.params.id_music});
 
-        try {
-            const vote = await newVote.save();
-            res.status(201);
-            res.json(vote);
-        } catch (error) {
+
+        const voteDate = new Date(newVote.created_at);
+        const endDate = new Date("2023-10-11T17:00:00.221Z")
+
+        if ( voteDate < endDate  ) {
+
+            try {
+                const vote = await newVote.save();
+                res.status(201);
+                res.json(vote);
+            } catch (error) {
+                res.status(500);
+                console.log(error);
+                res.json({message: "Server error (db)"})
+            }
+            
+        } else {
             res.status(500);
             console.log(error);
-            res.json({message: "Server error (db)"})
+            res.json({message: "Poll is over"})
         }
 
     } catch (error) {

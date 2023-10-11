@@ -11,7 +11,6 @@ app.use(express.json());
 
 const musicRoute = require('./routes/musicRoute');
 const voteRoute = require('./routes/voteRoute');
-// postRoute(app);
 
 app.use('/musics', musicRoute);
 app.use('/', voteRoute);

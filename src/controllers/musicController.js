@@ -53,7 +53,7 @@ exports.deleteAMusic = async (req, res) => {
         res.status(200);
         res.json({message: "Music deleted"});
 
-    } catch {
+    } catch (error) {
         res.status(500);
         console.log(error);
         res.json({message: "Server error"});
@@ -69,7 +69,7 @@ exports.getAMusic = async (req, res) => {
         res.status(200);
         res.json(music);
 
-    } catch {
+    } catch (error) {
         res.status(500);
         console.log(error);
         res.json({message: "Server error"});
@@ -80,6 +80,19 @@ exports.getAMusic = async (req, res) => {
 
 exports.getResults = async (req, res) => {
     
+    
+    try {
+        const musics = await Music.find({});
+        
+        //TODO: loop all musics to get sum of ratings and sort them
 
+        console.log(musics);
 
+        res.status(200);
+        res.json(musics);
+    } catch (error) {
+        res.status(500);
+        console.log(error);
+        res.json({message: "Server error"})
+    }
 }
